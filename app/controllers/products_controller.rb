@@ -8,3 +8,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 end
+def index
+  @products = Product.includes(:category).all
+end
